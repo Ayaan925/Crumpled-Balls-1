@@ -19,6 +19,7 @@ function setup() {
 	//Create the Bodies Here.
 	bin = new Dustbin();
 	paper = new Paper(150,200,25);
+	ground = new Ground(width/2,height, width, 70);
 	
 
 	Engine.run(engine);
@@ -33,9 +34,24 @@ function draw() {
   background(0);
   bin.display();
 paper.display();
+ground.display();
   drawSprites();
  
 }
 
+function keyPressed(){
+   if (keyCode === UP_ARROW){
 
+
+	Matter.Body.applyForce(paper.body,paper.body.position,{x:60,y:-60})
+
+
+   }
+
+
+
+
+
+
+}
 
